@@ -32,7 +32,6 @@ class MatchingParentheses
         }
 
     }   
-    write-host ($stack.Count -eq 0)
     return $stack.Count -eq 0
     }
 
@@ -40,7 +39,7 @@ class MatchingParentheses
 
 [MatchingParentheses]::IsMatching("{}")
 [MatchingParentheses]::IsMatching("{}{}{}{}{}")
-[MatchingParentheses]::IsMatching("{{}}}")
+[MatchingParentheses]::IsMatching("({[]})")
 
 
 
