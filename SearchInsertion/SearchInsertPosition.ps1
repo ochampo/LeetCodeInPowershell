@@ -4,35 +4,35 @@ function Find-IndexOfCurrentString {
         [int] $target
     )
      [int]$i = 0;
-     [int]$j = $nums.Length  - 1
+     [int]$j = $nums.Length - 1 
     while($i -le $j)
     {
         $midpoint = ($i + $j) / 2
-        if ($nums[$midpoint] -eq $target )
+        if ( $target -eq $nums[$midpoint] )
         {
-            return midpoint;
+            return $midpoint
         }
-        elseif( $target -gt $nums[$midpoint]) 
+        elseif( $target -gt $nums[$midpoint]  -and $null -ne $nums[$midpoint] ) 
         {
-            $i = $midpoint + 1;
+            $i = $midpoint + 1
 
         }
-        else 
+        elseif ( $target -lt $nums[$midpoint])
         {
-           $i = $midpoint - 1
+           $j = $midpoint - 1
         }
-        return $i; 
-
 
     }
+    return $i
     
 
 
 }
 # Test case 1: Target is in the array
-$nums = @(1,2,3,4,5,6,7,8,10)
+$nums = @(1,2,3,4,5,6,7,8,9,10)
 $result = Find-IndexOfCurrentString -nums $nums -target 7
 Write-Host "Index of target: $result"
+
 # Expected output: Index of target: 6
 # Test case 2: Target is not in the array
 $nums = @(1,2,3,4,5,6,7,8,10)
@@ -45,7 +45,7 @@ $result = Find-IndexOfCurrentString -nums $nums -target 7
 Write-Host "Index of target: $result"
 # Expected output: Index of target: -1 (or an error message)
 # Test case 4: Target is at the beginning of the array
-$nums = @(7,2,3,4,5,6,8,10)
+$nums = @(0,1,2,3)
 $result = Find-IndexOfCurrentString -nums $nums -target 7
 Write-Host "Index of target: $result"
 # Expected output: Index of target: 0
