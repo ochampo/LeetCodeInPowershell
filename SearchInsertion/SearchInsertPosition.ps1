@@ -55,7 +55,7 @@ $result = Find-IndexOfCurrentString -nums $nums -target 7
 Write-Host "Index of target: $result"
 # Expected output: Index of target: 8
 # Test case 6: Duplicate targets in the array
-$nums = @(1,2,3,4,5,6,7,7,8,10)
+$nums = @(1,2,3,4,5,6,7 ,7,8,10)
 $result = Find-IndexOfCurrentString -nums $nums -target 7
 Write-Host "Index of target: $result"
 # Expected output: Index of target: 6 (or the index of the first occurrence)
