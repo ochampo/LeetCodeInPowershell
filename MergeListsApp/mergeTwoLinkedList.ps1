@@ -1,14 +1,12 @@
-Class ListNode
-{
-    [int]$value
+
+class ListNode {
+    [int] $value
     [ListNode] $next
 
-ListNode($value=0 )
-{
-    $this.value = $value
-    $this.next = $null
-}
-
+    ListNode([int] $value = 0) {
+        $this.value = $value
+        $this.next  = $null
+    }
 }
 
 
