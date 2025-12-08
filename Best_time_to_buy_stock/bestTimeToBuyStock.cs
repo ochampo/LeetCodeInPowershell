@@ -37,4 +37,4 @@ static void Main(string[] args) {
             Console.WriteLine("Max Profit is " + maxProfit);
     }
 
-}
+} 
